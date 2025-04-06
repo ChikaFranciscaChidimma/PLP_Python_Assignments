@@ -1,0 +1,32 @@
+# Base class
+class Superhero:
+    def __init__(self, name, power, origin):
+        self.name = name
+        self.power = power
+        self.origin = origin
+
+    def show_identity(self):
+        print(f"🦸 Name: {self.name}, Power: {self.power}, Origin: {self.origin}")
+
+    def action(self):
+        print(f"{self.name} uses {self.power}!")
+
+# Subclass with inheritance and polymorphism
+class FlyingHero(Superhero):
+    def __init__(self, name, power, origin, flight_speed):
+        super().__init__(name, power, origin)
+        self.flight_speed = flight_speed
+
+    def action(self):  # Polymorphic behavior
+        print(f"{self.name} is flying at {self.flight_speed} mph with {self.power}!")
+
+# Create instances
+hero1 = Superhero("ShadowBlade", "Invisibility", "Night Realm")
+hero2 = FlyingHero("SkySurge", "Wind Control", "Sky Kingdom", 300)
+
+# Show output
+hero1.show_identity()
+hero1.action()
+print("---")
+hero2.show_identity()
+hero2.action()
